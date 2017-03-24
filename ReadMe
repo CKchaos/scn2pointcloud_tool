@@ -1,3 +1,6 @@
+The original toolbox is from https://github.com/shurans/SUNCGtoolbox.
+For the data conversion from OBJ file to point cloud, I do some change to the Classes,such as R3Grid,R3Secene, and I code a new scn2grd.cpp to realize the conversion.
+
 ---------
 cd /SUNCGtoolbox/gaps/
 make
