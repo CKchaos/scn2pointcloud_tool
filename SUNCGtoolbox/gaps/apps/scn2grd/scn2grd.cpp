@@ -238,6 +238,7 @@ void GetLabel(const char* name)
 {
   FILE *fp = fopen(name, "r");
   char buffer[100];
+  label_num = 0;
   while (fgets(buffer, 99, fp))
   {
     sscanf(buffer,"%s %d",obj_name[label_num],&label[label_num]);
@@ -259,7 +260,8 @@ extern "C" double * get_data(const char * s,int * b,int x,int y,int z,const char
   input_scene_name=s;
   output_grid_name="/home/papa/sung/object/41/41.txt";
 
-  GetLabel(label_file);
+  if(label_num==0)
+    GetLabel(label_file);
   // Read scene
   R3Scene *scene = ReadScene(input_scene_name);
   if (!scene) exit(-1);
