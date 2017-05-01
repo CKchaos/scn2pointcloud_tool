@@ -309,8 +309,8 @@ extern "C" double * get_data(const char * s,int * b,int x,int y,int z,const char
   for(int i=0;i<num*7;i++)
     res[i] = ans[i];
   free(ans);
-  const char *file_name = strrchr(input_scene_name, '/');
-  printf("%s %d\n",++file_name,grid->NEntries());
+  //const char *file_name = strrchr(input_scene_name, '/');
+  //printf("%s %d\n",++file_name,grid->NEntries());
 
   *b=num;
   return res;
