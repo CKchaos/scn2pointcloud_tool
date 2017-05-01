@@ -1864,6 +1864,18 @@ ReadMeshFile(const char *filename, R3SceneNode *parent_node)
   element->InsertShape(shape);
   R3SceneNode *node = new R3SceneNode(this);
   node->InsertElement(element);
+
+char buffer[1024];
+char sss[1000],ss[1000];
+strncpy(buffer, filename, 1024);
+char *endp = strrchr(buffer, '/');
+  if (!endp) endp = strrchr(buffer, '\\');
+sscanf(endp, "/%s",sss);
+char *ends = strrchr(sss, '.');
+*ends = '\0';
+parent_node->SetName(sss);
+node->SetName(sss);
+
   parent_node->InsertChild(node);
   
   // Return success

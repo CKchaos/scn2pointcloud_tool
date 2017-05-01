@@ -65,7 +65,6 @@ RasterizeTriangles(R3Grid *grid, R3Scene *scene, R3SceneNode *node, const R3Affi
     for (int l = 0; l < node->NReferences(); l++) 
     {
       R3SceneNode *node_new = node->Reference(l)->ReferencedScene()->Node(0);
-
       int label_mark1 = 0;
       for (int i = 0; i < label_num; i++)
         if (strcmp(node->Reference(l)->ReferencedScene()->Name(),obj_name[i]) == 0)
@@ -176,7 +175,6 @@ RasterizeTriangles(R3Grid *grid, R3Scene *scene, R3SceneNode *node, const R3Affi
         }
       }
     }
-
     // Rasterize children
     for (int i = 0; i < node->NChildren(); i++) 
     {
@@ -193,6 +191,7 @@ CreateGrid(R3Scene *scene,int x,int y,int z)
   // Start statistics
   RNTime start_time;
   start_time.Read();
+
   // Get bounding box
   R3Box bbox = scene->BBox();
   if (grid_boundary_radius > 0) {
@@ -226,6 +225,7 @@ CreateGrid(R3Scene *scene,int x,int y,int z)
   // Threshold grid (to compensate for possible double rasterization)
   grid->Threshold(0.5, 0.0, 1.0);
   // Return grid
+
   return grid;
 }
 
@@ -268,8 +268,7 @@ extern "C" double * get_data(const char * s,int * b,int x,int y,int z,const char
 
   // Create grid
   R3Grid *grid = CreateGrid(scene,x,y,z);
-  if (!grid) exit(-1);
-
+  if (!grid) exit(-1);;
   int grid_resolution2 = grid->Resolution(2);
   int grid_resolution1 = grid->Resolution(1);
   int grid_resolution0 = grid->Resolution(0);
@@ -305,6 +304,7 @@ extern "C" double * get_data(const char * s,int * b,int x,int y,int z,const char
 	  }
 	}
   }
+
   res = (double*)malloc(sizeof(double)*num*7);
   for(int i=0;i<num*7;i++)
     res[i] = ans[i];

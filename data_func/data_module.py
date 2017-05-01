@@ -16,4 +16,4 @@ libcd.get_data.argtypes =  [c_char_p,c_void_p,c_int,c_int,c_int,c_char_p]
 
 
 def data_func(s, b, x, y, z,label_file):
-    return libcd.get_data(s,b,x,y,z,label_file)
+	return libcd.get_data(s,b,x,y,z,label_file)
