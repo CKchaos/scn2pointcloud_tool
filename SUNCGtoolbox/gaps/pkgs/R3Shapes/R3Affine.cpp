@@ -68,11 +68,14 @@ R3Affine::
 const R4Matrix& R3Affine::
 InverseMatrix(void) const
 {
+
     // Update inverse matrix 
     if (!flags[R3_AFFINE_INVERSE_UPTODATE_FLAG]) {
         // Update inverse matrix
         R3Affine *affine = (R3Affine *) this;
+
 	affine->inverse = matrix.Inverse();
+
 	affine->flags.Add(R3_AFFINE_INVERSE_UPTODATE_FLAG);
     }
 

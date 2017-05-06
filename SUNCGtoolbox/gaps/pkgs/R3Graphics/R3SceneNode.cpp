@@ -754,7 +754,7 @@ UpdateBBox(void)
     element_bbox.Transform(transformation);
     bbox.Union(element_bbox);
   }
-    
+
   // Add bounding box of references
   for (int i = 0; i < references.NEntries(); i++) {
     R3SceneReference *reference = references.Kth(i);
@@ -764,7 +764,6 @@ UpdateBBox(void)
     reference_bbox.Transform(transformation);
     bbox.Union(reference_bbox);
   }
-    
   // Add bounding box of children nodes
   for (int i = 0; i < children.NEntries(); i++) {
     R3SceneNode *child = children.Kth(i);

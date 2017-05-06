@@ -81,7 +81,9 @@ R3Grid(int xresolution, int yresolution, int zresolution, const R3Box& bbox)
   for (int i = 0; i < grid_size; i++) grid_values[i] = 0;
 
   // Set transformations
+
   SetWorldToGridTransformation(bbox);
+
 }
 
 
@@ -3008,6 +3010,7 @@ SetWorldToGridTransformation(const R3Affine& affine)
   grid_to_world_transform = affine.Inverse();
   world_to_grid_scale_factor = affine.ScaleFactor();
   grid_to_world_scale_factor = (world_to_grid_scale_factor != 0) ? 1 / world_to_grid_scale_factor : 1.0;
+
 }
 
 

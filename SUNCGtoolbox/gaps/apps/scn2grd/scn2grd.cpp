@@ -15,8 +15,8 @@ static double grid_spacing = 0.005;
 static double grid_boundary_radius = 0.05;
 static int grid_max_resolution = 1000;
 int label_num = 0;
-char obj_name[3000][100];
-int label[3000];
+char obj_name[5000][100];
+int label[5000];
 
 
 
@@ -237,11 +237,17 @@ CreateGrid(R3Scene *scene,int x,int y,int z)
 void GetLabel(const char* name)
 {
   FILE *fp = fopen(name, "r");
-  char buffer[100];
+  //char buffer[100];
   label_num = 0;
-  while (fgets(buffer, 99, fp))
+  /*
+  while (fgets(buffer, 99, fp)!=EOF)
   {
     sscanf(buffer,"%s %d",obj_name[label_num],&label[label_num]);
+    label_num++;
+  }
+  */
+  while(fscanf(fp,"%s %d",obj_name[label_num],&label[label_num])!=EOF)
+  {
     label_num++;
   }
   fclose(fp);

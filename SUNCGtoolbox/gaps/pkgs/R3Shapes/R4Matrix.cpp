@@ -264,7 +264,8 @@ Invert(void)
     RNScalar a3 = R4MatrixDet3(Me, Mf, Mh, Mi, Mj, Ml, Mm, Mn, Mp);
     RNScalar a4 = R4MatrixDet3(Me, Mf, Mg, Mi, Mj, Mk, Mm, Mn, Mo);
     RNScalar det = Ma*a1 - Mb*a2 + Mc*a3 - Md*a4;
-    if (RNIsZero(det, 1E-8)) {
+
+    if (RNIsZero(det, 1E-13)) {
         RNWarning("Unable to invert matrix with zero determinant");
         return;
     }
