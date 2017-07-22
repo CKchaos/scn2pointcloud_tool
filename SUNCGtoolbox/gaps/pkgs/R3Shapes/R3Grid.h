@@ -141,7 +141,7 @@ public:
   void RasterizeGridBox(const R3Box& box, RNScalar value, int operation = 0);
   void RasterizeGridSphere(const R3Point& center, RNLength radius, RNScalar value, RNBoolean solid = TRUE, int operation = 0);
   void RasterizeWorldSphere(const R3Point& center, RNLength radius, RNScalar value, RNBoolean solid = TRUE, int operation = 0);
-RNRgb ChangeRGB(const int p[3],const double r1[3],const double r2[3],const double r3[3],const R2Point& t1,const R2Point& t2,const R2Point& t3,R2Image *image);
+RNRgb ChangeRGB(const int p[3],const double r1[3],const double r2[3],const double r3[3],const R2Point& t1,const R2Point& t2,const R2Point& t3,R2Image *image,RNRgb rgb_origin);
 
   // Relationship functions
   RNScalar Dot(const R3Grid& grid) const;

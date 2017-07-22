@@ -299,6 +299,7 @@ Read(const char *filename)
   else if (!strncmp(input_extension, ".pgm", 4)) return ReadPPM(filename);
   else if (!strncmp(input_extension, ".pfm", 4)) return ReadPFM(filename);
   else if (!strncmp(input_extension, ".jpg", 4)) return ReadJPEG(filename);
+  else if (!strncmp(input_extension, ".JPG", 4)) return ReadJPEG(filename);
   else if (!strncmp(input_extension, ".jpeg", 5)) return ReadJPEG(filename);
   else if (!strncmp(input_extension, ".tif", 4)) return ReadTIFF(filename);
   else if (!strncmp(input_extension, ".tiff", 5)) return ReadTIFF(filename);
@@ -307,7 +308,7 @@ Read(const char *filename)
   else if (!strncmp(input_extension, ".grd", 4)) return ReadGRD(filename);
   
   // Should never get here
-  fprintf(stderr, "Unrecognized image file extension");
+  fprintf(stderr, "Unrecognized image file extension\n");
   return 0;
 }
 

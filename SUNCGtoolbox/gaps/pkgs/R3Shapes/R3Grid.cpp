@@ -2388,12 +2388,13 @@ RasterizeGridSpan(const int p1[3], const int p2[3], RNScalar value, int operatio
 }
 
 RNRgb R3Grid::
-ChangeRGB(const int p[3],const double r1[3],const double r2[3],const double r3[3],const R2Point& t1,const R2Point& t2,const R2Point& t3,R2Image *image)
+ChangeRGB(const int p[3],const double r1[3],const double r2[3],const double r3[3],const R2Point& t1,const R2Point& t2,const R2Point& t3,R2Image *image,RNRgb rgb_origin)
 {
     double sh[3];
     sh[0] = (double)p[0];
     sh[1] = (double)p[1];
     sh[2] = (double)p[2];
+
     double mn[3],mx[3],delta[3];
     for (int i = 0; i < 3; i++) 
     {
@@ -2425,8 +2426,11 @@ ChangeRGB(const int p[3],const double r1[3],const double r2[3],const double r3[3
 	if (r1[1]==r2[1] && r2[1]==r3[1]) d=1;
 	if (r1[2]==r2[2] && r2[2]==r3[2]) d=2;
     double xy = 0;
+	int time=0;
     while(!xy>0)
     {
+      if (time>=3)
+        return rgb_origin;
       double rp1[2],rp2[2],rp3[2],rn[2];
       if (d == 0)
       {
@@ -2481,6 +2485,7 @@ ChangeRGB(const int p[3],const double r1[3],const double r2[3],const double r3[3
       if (xy == 0)
       {
         d = (d+2)%3;
+        time++;
         continue;
       }
       double m = s1[0]+(rn[0]-rp1[0])*(m1*y2-m2*y1)/xy+(rn[1]-rp1[1])*(m2*x1-m1*x2)/xy;
@@ -2511,22 +2516,21 @@ RasterizeGridSpanMat(const int p1[3], const int p2[3],const double r1[3], const 
     }
     p[i] = p1[i];
   }
-
   // Choose dimensions
   int i1=0;
   if(dd[1]>dd[i1]){i1=1;}
   if(dd[2]>dd[i1]){i1=2;}
   int i2=(i1+1)%3;
   int i3=(i1+2)%3;
-
   // Check span extent
   if(dd[i1]==0){
     // Span is a point - rasterize it
     if (((p[0] >= 0) && (p[0] < grid_resolution[0])) &&
         ((p[1] >= 0) && (p[1] < grid_resolution[1])) &&
         ((p[2] >= 0) && (p[2] < grid_resolution[2]))) {
+
       if(image->RowSize()>0)
-        RGB = ChangeRGB(p,r1,r2,r3,t1,t2,t3, image);
+        RGB = ChangeRGB(p,r1,r2,r3,t1,t2,t3, image, RGB);
       RasterizeGridValueMat(p[0], p[1], p[2], value,label, RGB, operation);
     }
   }
@@ -2538,7 +2542,7 @@ RasterizeGridSpanMat(const int p1[3], const int p2[3],const double r1[3], const 
           ((p[1] >= 0) && (p[1] < grid_resolution[1])) &&
           ((p[2] >= 0) && (p[2] < grid_resolution[2]))) {
         if(image->RowSize()>0)
-          RGB = ChangeRGB(p,r1,r2,r3,t1,t2,t3, image);
+          RGB = ChangeRGB(p,r1,r2,r3,t1,t2,t3, image, RGB);
         RasterizeGridValueMat(p[0], p[1], p[2], value,label, RGB, operation);
       }
       off[i2]+=dd[i2];
@@ -2696,7 +2700,6 @@ void R3Grid::
 RasterizeGridTriangleMat(const int p1[3], const int p2[3], const int p3[3],const double w1[3], const double w2[3], const double w3[3],const R2Point& t1, const R2Point& t2, const R2Point& t3, RNScalar value,int label, RNRgb RGB, R2Image *image, int operation)
 {
   int i,j;
-
   // Figure out the min, max, and delta in each dimension
   int mn[3], mx[3], delta[3];
   for (i = 0; i < 3; i++) {
@@ -2828,6 +2831,7 @@ RasterizeGridTriangleMat(const int p1[3], const int p2[3], const int p3[3],const
       else{off2[j]%=ddx;}
     }
   }
+
 }
 
 

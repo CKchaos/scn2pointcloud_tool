@@ -1,3 +1,0 @@
-cd /gaps/apps/scn2grd/
-
-g++ -shared -fPIC -o libdata.so scn2grd.cpp  -L../../lib/x86_64 -g -lR3Graphics -lR3Shapes -lR2Shapes -lRNBasics -ljpeg -lpng   -lfglut -lGLU -lGL -lX11 -lm -I. -I../../pkgs  -g
