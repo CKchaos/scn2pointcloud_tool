@@ -14,8 +14,7 @@ The tool is designed for the use of SUNCG dataset and based on the data organiza
 
 The tool is adapted from [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox), which is adapted from GAPS. The original GAPS README is on the bottom.
 
----------
-#### Tool Organization
+### Tool Organization
 
 ```
 data_func
@@ -36,7 +35,7 @@ SUNCGtoolbox
 
 **Note**:SUNCGtoolbox's organization is almost same as [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox). A number of  class files are modified for the aim of conversion algorithm.
 
-#### How to Use
+### How to Use
 
 ##### Compilation
 
@@ -55,7 +54,7 @@ g++ -shared -fPIC -o libdata.so scn2pointcloud.cpp  -L../../lib/x86_64 -g -lR3Gr
 
 If nothing is wrong, you will get a file named libdata.so, the method to use this file is displayed in data_func.
 
-#### GAPS README
+### GAPS README
 
 GAPS Users -
 
