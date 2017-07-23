@@ -25,12 +25,12 @@ SUNCGtoolbox
     |--gaps
       |-- pkgs - source and include files for all packages (software libraries)
       |-- apps
-      	|--scn2pointcloud - the program that implement the conversion algorithm
+          |--scn2pointcloud - the program that implement the conversion algorithm
       |-- makefiles - unix-style make file definitions
       |-- vc - visual studio solution files
       |-- lib - archive library (.lib) files (created during compilation)
       |-- bin - executable files (created during compilation)
-	|--metadata
+    |--metadata
 ```
 
 **Note**:SUNCGtoolbox's organization is almost same as [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox). A number of  class files are modified for the aim of conversion algorithm.
@@ -48,7 +48,7 @@ make
 ##### Generate Dynamic Link Library
 
 ```cmake
-cd /SUNCGtoolbox/gaps/apps/scn2grd/
+cd SUNCGtoolbox/gaps/apps/scn2pointcloud/
 g++ -shared -fPIC -o libdata.so scn2pointcloud.cpp  -L../../lib/x86_64 -g -lR3Graphics -lR3Shapes -lR2Shapes -lRNBasics -ljpeg -lpng   -lfglut -lGLU -lGL -lX11 -lm -I. -I../../pkgs  -g
 ```
 
