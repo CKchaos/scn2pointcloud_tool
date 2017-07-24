@@ -1,6 +1,6 @@
 # scn2pointcloud_tool Documentation
 
-The aim of this tool is to convert data from the format of CAD models, such as .obj/.off file, to the format  of **point cloud with RGB and labels**. The convert result of this tool is as follows.
+The aim of this tool is to achieve data conversion from the format of CAD models, such as .obj/.off file, to the format  of **point cloud with RGB and labels**. The convert result of this tool is as follows.
 
 The display of an OBJ file:
 
@@ -25,7 +25,7 @@ SUNCGtoolbox
     |--gaps
       |-- pkgs - source and include files for all packages (software libraries)
       |-- apps
-          |--scn2pointcloud - the program that implement the conversion algorithm
+          |--scn2pointcloud - program that implements the conversion algorithm
       |-- makefiles - unix-style make file definitions
       |-- vc - visual studio solution files
       |-- lib - archive library (.lib) files (created during compilation)
@@ -33,7 +33,7 @@ SUNCGtoolbox
     |--metadata
 ```
 
-**Note**:SUNCGtoolbox's organization is almost same as [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox). A number of  class files are modified for the aim of conversion algorithm.
+**Note**: SUNCGtoolbox's organization is almost same as [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox). A number of  class files are modified to achieve the aim of conversion algorithm.
 
 ### How to Use
 
