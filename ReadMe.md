@@ -16,13 +16,13 @@ The tool is adapted from [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox)
 
 ### Bibtex
 
-If you find this tool useful, please consider citing our [paper]([http://arxiv.org/abs/1707.06783](http://arxiv.org/abs/1707.06783)) .
+If you find this tool useful, please consider citing our [paper](http://arxiv.org/abs/1707.06783) .
 
 ```
 @article{liu20173ad, 
     title= {3DCNN-DQN-RNN: A Deep Reinforcement Learning Framework for Semantic Parsing of Large-scale 3D  Point Clouds}, 
     author= {Liu, Fangyu and Li, Shuaipeng and Zhang, Liqiang and Zhou, Chenghu and Ye, Rongtian and Wang, Yuebin and Lu, Jiwen}, 
-    booltitle={IEEE International Conference on Computer Vision (ICCV)}, 
+    journal={IEEE International Conference on Computer Vision (ICCV)}, 
     year={2017} 
 }
 ```
