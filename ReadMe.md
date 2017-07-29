@@ -16,7 +16,7 @@ The tool is adapted from [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox)
 
 ### Bibtex
 
-If you find this tool useful, please consider citing our [paper](http://arxiv.org/abs/1707.06783) .
+ If you find this tool useful in your research, please consider citing our [paper](http://arxiv.org/abs/1707.06783) .
 
 ```
 @article{liu20173ad, 
