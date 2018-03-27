@@ -10,7 +10,7 @@ The visualization of its corresponding output:
 
 ![694shape](694cloud.png)
 
-The tool is designed for the use of SUNCG dataset and based on the data organization of SUNCG dataset, so, for other dataset of CAD models, the tool may be not compatible completely. For more details about SUNCG dataset, please see [here](http://suncg.cs.princeton.edu/).
+The tool is designed for the use of SUNCG dataset and based on the data organization of SUNCG dataset, so, for other dataset of CAD models, the tool may be not compatible completely. You can see this [webpage](http://suncg.cs.princeton.edu) and [paper](https://arxiv.org/pdf/1611.08974v1.pdf) for more details about SUNCG dataset.
 
 The tool is modified from [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox), which is modified from GAPS. The original GAPS README is on the bottom.
 
