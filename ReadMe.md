@@ -2,29 +2,30 @@
 
 The aim of this tool is to achieve data conversion from the format of CAD models, such as .obj/.off file, to the format  of **point cloud with RGB and labels**. The convert result of this tool is as follows.
 
-The display of an OBJ file:
+The visualization of an OBJ file:
 
 ![694shape](694shape.png)
 
-The display of its corresponding output:
+The visualization of its corresponding output:
 
 ![694shape](694cloud.png)
 
 The tool is designed for the use of SUNCG dataset and based on the data organization of SUNCG dataset, so, for other dataset of CAD models, the tool may be not compatible completely. For more details about SUNCG dataset, please see [here](http://suncg.cs.princeton.edu/).
 
-The tool is adapted from [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox), which is adapted from GAPS. The original GAPS README is on the bottom.
+The tool is modified from [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox), which is modified from GAPS. The original GAPS README is on the bottom.
 
 ### Bibtex
 
  If you find this tool useful in your research, please consider citing our [paper](http://arxiv.org/abs/1707.06783) .
 
 ```
-@article{liu20173ad, 
-    title= {3DCNN-DQN-RNN: A Deep Reinforcement Learning Framework for Semantic Parsing of Large-scale 3D  Point Clouds}, 
-    author= {Liu, Fangyu and Li, Shuaipeng and Zhang, Liqiang and Zhou, Chenghu and Ye, Rongtian and Wang, Yuebin and Lu, Jiwen}, 
-    journal={IEEE International Conference on Computer Vision (ICCV)}, 
-    year={2017} 
-}
+@InProceedings{Liu_2017_ICCV,
+author = {Liu, Fangyu and Li, Shuaipeng and Zhang, Liqiang and Zhou, Chenghu and Ye, Rongtian and Wang, Yuebin and Lu, Jiwen},
+title = {3DCNN-DQN-RNN: A Deep Reinforcement Learning Framework for Semantic Parsing of Large-Scale 3D Point Clouds},
+booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+month = {Oct},
+year = {2017}
+} 
 ```
 
 ### Tool Organization
@@ -46,9 +47,9 @@ SUNCGtoolbox
     |--metadata
 ```
 
-**Note**: SUNCGtoolbox's organization is almost same as [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox). A number of  class files are modified to achieve the aim of conversion algorithm.
+**Note**: The organization od SUNCGtoolbox in this repository  is almost same as [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox). A number of  class files are modified to achieve the aim of data conversion.
 
-### How to Use
+### Usage
 
 ##### Compilation
 
@@ -65,7 +66,7 @@ cd SUNCGtoolbox/gaps/apps/scn2pointcloud/
 g++ -shared -fPIC -o libdata.so scn2pointcloud.cpp  -L../../lib/x86_64 -g -lR3Graphics -lR3Shapes -lR2Shapes -lRNBasics -ljpeg -lpng   -lfglut -lGLU -lGL -lX11 -lm -I. -I../../pkgs  -g
 ```
 
-If nothing is wrong, you will get a file named libdata.so, the method to use this file is displayed in data_func.
+If nothing is wrong, you will get a file named libdata.so, the method to use this file is described in data_func.
 
 ### GAPS README
 
