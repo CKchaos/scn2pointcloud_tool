@@ -47,7 +47,7 @@ SUNCGtoolbox
     |--metadata
 ```
 
-**Note**: The organization od SUNCGtoolbox in this repository  is almost same as [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox). A number of  class files are modified to achieve the aim of data conversion.
+**Note**: The organization of SUNCGtoolbox in this repository  is almost same as [SUNCGtoolbox](https://github.com/shurans/SUNCGtoolbox). A number of  class files are modified to achieve the aim of data conversion.
 
 ### Usage
 
